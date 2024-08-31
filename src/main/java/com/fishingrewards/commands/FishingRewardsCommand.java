@@ -51,8 +51,8 @@ public class FishingRewardsCommand implements CommandExecutor {
                          return true;
                      }
                      if(args[0].equalsIgnoreCase("reload")){
-                         rewardManager.reload();
                          configManager.loadConfig();
+                         rewardManager.reload();
                          guiHandler.load();
                          logger.log(reloaded);
                          sender.sendMessage(reloaded);
