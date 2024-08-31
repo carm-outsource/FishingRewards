@@ -76,18 +76,18 @@ public class FishingManager implements Listener {
 
         double luckLevel = 0;
         if(hand.hasItemMeta() && hand.getItemMeta().hasEnchants()){
-            if(hand.getItemMeta().hasEnchant(Enchantment.LUCK)) luckLevel = hand.getItemMeta().getEnchantLevel(Enchantment.LUCK);
+            if(hand.getItemMeta().hasEnchant(Enchantment.LUCK_OF_THE_SEA)) luckLevel = hand.getItemMeta().getEnchantLevel(Enchantment.LUCK_OF_THE_SEA);
         }
-        if(offHand.hasItemMeta() && offHand.getItemMeta().hasEnchants() && offHand.getItemMeta().hasEnchant(Enchantment.LUCK)) {
+        if(offHand.hasItemMeta() && offHand.getItemMeta().hasEnchants() && offHand.getItemMeta().hasEnchant(Enchantment.LUCK_OF_THE_SEA)) {
             switch (configManager.getOffHandLuck()) {
                 default:
                 case DISABLE:
                     break;
                 case REPLACE:
-                    luckLevel = offHand.getItemMeta().getEnchantLevel(Enchantment.LUCK);
+                    luckLevel = offHand.getItemMeta().getEnchantLevel(Enchantment.LUCK_OF_THE_SEA);
                     break;
                 case ADD:
-                    luckLevel += offHand.getItemMeta().getEnchantLevel(Enchantment.LUCK);
+                    luckLevel += offHand.getItemMeta().getEnchantLevel(Enchantment.LUCK_OF_THE_SEA);
                     break;
             }
         }
